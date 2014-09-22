@@ -144,8 +144,8 @@ func (client *Client) makeSignature(method, bucket, object string, header http.H
 }
 
 type Bucket struct {
-	name     string
-	location string
+	Name     string
+	Location string
 	*Client
 }
 
@@ -167,11 +167,11 @@ func (bucket *Bucket) PutObject(objectName, contentType string, content io.ReadS
 	for key, val := range headers {
 		header.Set(key, val)
 	}
-	return bucket.do("PUT", bucket.name, bucket.location, objectName, header, 200, content)
+	return bucket.do("PUT", bucket.Name, bucket.Location, objectName, header, 200, content)
 }
 
 func (bucket *Bucket) DeleteObject(objectName string) error {
-	return bucket.do("DELETE", bucket.name, bucket.location, objectName, nil, 204, nil)
+	return bucket.do("DELETE", bucket.Name, bucket.Location, objectName, nil, 204, nil)
 }
 
 func checkBucketName(name string) error {
