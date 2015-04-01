@@ -8,7 +8,7 @@ import (
 
 func TestClient(t *testing.T) {
 
-	c := New("ruCnke7MVynL9T11", "itWxg1RBZBiY2jVWo0wu9oOjjI7BVg")
+	c := New("ruCnke7M11", "itWxg1RBZBiY2jjI7BVg")
 	bucket := &Bucket{"8mbang-app-img", L_Beijing, c}
 	content, err := os.Open("E:/Document/Desktop/News/005Hg45Vgw1ejxcj9hjr0j30c88351ky.jpg")
 	err = bucket.PutObject("hello.jpg", "image/jpeg", content, map[string]string{"X-OSS-meta-test": "helloworld", "Cache-Control": "no-cache"})
